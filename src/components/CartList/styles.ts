@@ -1,19 +1,15 @@
 import styled from 'styled-components'
 
-export const ComputerListContainer = styled.section`
-  width: 100%;
-  min-height: 100vh;
+export const CartListContainer = styled.section`
+  width: 100vw;
   max-width: 1024px;
+  overflow-x: hidden;
   padding: 10px;
   margin: auto;
 `
-
 export const List = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 30px;
+  justify-content: center;
 `
