@@ -3,7 +3,6 @@ import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import 'antd/dist/antd.css'
 import { ConfigProvider } from 'antd'
-import ptBr from 'antd/lib/locale/pt_BR'
 
 import GlobalStyle from '../styles/global'
 import theme from '../styles/theme'
@@ -16,7 +15,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
-          <ConfigProvider locale={ptBr}>
+          <ConfigProvider>
             <Component {...pageProps} />
             <GlobalStyle />
           </ConfigProvider>
