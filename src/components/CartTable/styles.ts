@@ -4,7 +4,6 @@ export const Preview = styled.img`
   height: 50px;
   object-fit: cover;
   @media (min-width: 768px) {
-    width: 100%;
     height: 90px;
     object-fit: cover;
   }
@@ -19,4 +18,9 @@ export const TableContainer = styled.div`
 
 export const DeleteButton = styled.button`
   cursor: pointer;
+  border: none;
+  background-color: #bb2a7d;
+  color: #ffff;
+  padding: 4px 10px;
+  border-radius: 4px;
 `

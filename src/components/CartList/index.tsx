@@ -1,14 +1,32 @@
 import React from 'react'
 import CartTable from '../CartTable'
-import { CartListContainer, List } from './styles'
+import {
+  CartListContainer,
+  Paper,
+  Title,
+  CartHeader,
+  RemoveCartButton,
+  TotalPrice
+} from './styles'
+import useDeleteCart from '../../hooks/useDeleteCart'
+import useSumTotalPrice from '../../hooks/useSumTotalPrice'
 
 const CartList: React.FC = () => {
+  const { deleteCart } = useDeleteCart()
+  const { total } = useSumTotalPrice()
+
   return (
     <CartListContainer>
-      <h1>Shopping Cart</h1>
-      <List>
+      <CartHeader>
+        <Title>My Shopping Cart</Title>
+        <RemoveCartButton type="button" onClick={() => deleteCart()}>
+          Delete Cart
+        </RemoveCartButton>
+      </CartHeader>
+      <Paper>
         <CartTable />
-      </List>
+      </Paper>
+      <TotalPrice>{total}</TotalPrice>
     </CartListContainer>
   )
 }
